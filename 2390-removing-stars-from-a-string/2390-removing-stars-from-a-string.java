@@ -5,11 +5,11 @@ class Solution {
         for(int i=0;i<n;i++){
             char ch=s.charAt(i);
 
-            if(!st.empty() && ch=='*'){
+            if(!st.isEmpty() && ch=='*'){
                 st.pop();
             }
             else{
-                st.push();
+                st.push(ch);
             }
         }
         StringBuilder sb=new StringBuilder();
