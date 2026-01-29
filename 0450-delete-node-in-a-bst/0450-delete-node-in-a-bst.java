@@ -14,10 +14,10 @@
  * }
  */
 class Solution {
-    // public TreeNode deleteNode(TreeNode root, int x) {
-    //      if(root==null) return null;
-    // return check(root,x);
-    // }
+    public TreeNode deleteNode(TreeNode root, int x) {
+         if(root==null) return null;
+    return check(root,x);
+    }
     int minVal(TreeNode root){
         while(root.left!=null){
             root = root.left;
