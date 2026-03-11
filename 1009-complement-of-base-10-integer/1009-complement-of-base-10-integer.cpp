@@ -1,9 +1,13 @@
 class Solution {
 public:
     int bitwiseComplement(int n) {
-        int x=n|1;
-        for(int i=0;i<=4;i++)
-            x|=x>>(1<<i);
-        return n^x;
+        if(n==1) return 0;
+        if(n==0) return 1;
+        int x=1;
+        while(x<=n){
+            n=n^x;
+            x=x<<1;
+        }
+        return n;
     }
 };
