@@ -5,7 +5,6 @@ class Solution {
         dfs(root, res);
         return res;
     }
-
     private void dfs(Node root, List<Integer> res) {
         for (Node child : root.children) {
             dfs(child, res);
