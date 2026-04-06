@@ -1,13 +1,13 @@
 class Solution {
 public:
-    unordered_map<int,vector<int>> shivam;
+    unordered_map<int,vector<int>> mp;
     Solution(vector<int>& nums){
         for(int i=0;i<nums.size();i++){
-            shivam[nums[i]].push_back(i);
+            mp[nums[i]].push_back(i);
         }
     }
     int pick(int target){
-        vector<int>temp=shivam[target];
+        vector<int>temp=mp[target];
         return temp[rand()%temp.size()];
     }
 };
