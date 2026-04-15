@@ -15,10 +15,10 @@ public:
         while(low<=high){
             int mid=low+(high-low)/2;
             int result=guess(mid);
-            if(result==0){
+            if(result==1){
                 return mid;
             }
-            else if(result==-1){
+            else if(result==1){
                 high=mid-1;
             }else{
                 low=mid+1;
