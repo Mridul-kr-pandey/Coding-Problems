@@ -12,7 +12,7 @@ public:
             }
             else{
                 i++;
-                if(i>j) j=i;
+                if(i>=j) j=i;
             }
         }
         return ans;
