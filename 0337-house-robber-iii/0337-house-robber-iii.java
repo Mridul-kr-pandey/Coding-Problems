@@ -14,27 +14,27 @@
  * }
  */
 class Solution {
-    class Pair{
-        int take;
-        int skip;
-        Pair(int t,int s){
-            take=t;
-            skip=s;
-        }
-    }
-    public Pair robbery(TreeNode root){
-        if(root==null) return new Pair(0,0);
-        Pair l=robbery(root.left);
-        Pair r=robbery(root.right);
+    // class Pair{
+    //     int take;
+    //     int skip;
+    //     Pair(int t,int s){
+    //         take = t;
+    //         skip = s;
+    //     }
+    // }
+    public int[] robbery(TreeNode root){
+        if(root==null) return new int[]{0,0};
+        int[] l = robbery(root.left);
+        int[] r = robbery(root.right);
 
-        int t=root.val+l.skip+r.skip;
-        int s=Math.max(l.skip,l.take)+Math.max(r.skip,r.take);
+        int t = root.val + l[0] + r[0];
+        int s  = Math.max(l[0],l[1]) + Math.max(r[0],r[1]);
 
-        return new Pair(t,s);
+        return new int[]{s,t};
     }
     public int rob(TreeNode root) {
-        Pair p=robbery(root);
-        return Math.max(p.take,p.skip);
+        int[] p = robbery(root);
+        return Math.max(p[0],p[1]);
     }
 }
 
